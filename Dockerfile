@@ -1,13 +1,10 @@
 # Use the official NGINX base image
 FROM nginx:latest
 
-# Copy your NGINX configuration file to the container
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy your index.html to the appropriate directory
+COPY index.html /usr/share/nginx/html
 
-# Copy your static files to the appropriate directory
-COPY ./static /usr/share/nginx/html
-
-# Expose the port on which NGINX will listen
+# Expose port 80
 EXPOSE 80
 
 # Start NGINX when the container is launched
